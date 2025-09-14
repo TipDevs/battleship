@@ -23,12 +23,18 @@ export class Gameboard {
   receiveAttack([row, col]) {
     const attackedCell = this.#board[row][col];
     if (attackedCell === null) {
+      this.#board[row][col] = "miss";
       this.#missedAttacks.push([row, col]);
       return "miss";
-    } else {
+    }
+
+    if (typeof attackedCell?.hit === "function") {
       attackedCell.hit();
+      this.#board[row][col] = "hit";
       return "hit";
     }
+
+    if (attackedCell === "miss" || attackedCell === "hit") return;
   }
   allShipsSunk() {
     return this.#ships.every((port) => port.ship.isSunk());
