@@ -5,6 +5,9 @@ export class Player {
     this.#name = name;
     this.#gameBoard = new gameBoard();
   }
+  attack(target, coord) {
+    target.getGameBoard().receiveAttack(coord);
+  }
   getName() {
     return this.#name;
   }
