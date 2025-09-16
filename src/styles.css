@@ -6,7 +6,7 @@
 }
 body {
   height: 100dvh;
-  background-color: #00273d;
+  background-color: #00273ddf;
 }
 main {
   width: 100%;
@@ -21,7 +21,6 @@ main {
   align-items: center;
   gap: 30px;
   color: #ffffff;
-  /* background-color: #ff2828; */
   flex: 1.6;
 }
 #title-indicator > h1 {
@@ -31,7 +30,6 @@ main {
 }
 .div-indicator {
   justify-content: flex-end;
-  /* background-color: #ff2828; */
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -121,7 +119,7 @@ div.hit {
     outline: none;
     border: none;
     &:hover {
-        background-color: #00273d;
+        background-color: #00273ddf;
         color: #ffffff;
     }
     font-weight: bold;
@@ -131,6 +129,6 @@ div.hit {
     padding-left: 10px;
     &:hover {
         background-color: #ffffff;
-        color: #000;
+        color: #00273ddf;
     }
 }
