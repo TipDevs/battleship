@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100dvh;
+  background-color: #00273d;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+#title-indicator {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: #ffffff;
+  /* background-color: #ff2828; */
+  flex: 1.6;
+}
+#title-indicator > h1 {
+  flex: 3.5;
+  text-align: right;
+  font-size: 40px;
+}
+.div-indicator {
+  justify-content: flex-end;
+  /* background-color: #ff2828; */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.div-indicator > div {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.indicator {
+  width: 30px;
+  height: 10px;
+}
+.miss-indicator > .indicator {
+  background-color: #ffffff;
+}
+.hit-indicator > .indicator {
+  background-color: #ff2828;
+}
+.ship-indicator > .indicator {
+  background-color: #737373;
+}
+#game-console {
+  flex: 3;
+  display: none;
+  justify-content: center;
+  gap: 15vw;
+}
+#game-console > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#player > h2,
+#spotAi > h2 {
+  text-align: center;
+  color: #ffffff;
+}
+.game-pad {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 15px);
+  gap: 5px;
+}
+.game-pad > div {
+  border: 2px solid #c2f6ff;
+}
+div.ship {
+  background-color: #737373;
+  border: 2px solid #737373;
+}
+
+div.miss {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+div.hit {
+  background-color: #ff2828;
+  border: 2px solid #ff2828;
+}
+
+#game-start {
+    background: #737373;
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+    left: 35%;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #ffffff;
+}
+#game-start form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+#game-start form > * {
+    height: 3em;
+    outline: none;
+    border: none;
+    &:hover {
+        background-color: #00273d;
+        color: #ffffff;
+    }
+    font-weight: bold;
+
+}
+#game-start form > input {
+    padding-left: 10px;
+    &:hover {
+        background-color: #ffffff;
+        color: #000;
+    }
+}
