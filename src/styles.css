@@ -64,6 +64,9 @@ main {
   flex-direction: column;
   gap: 20px;
 }
+div#spotAi {
+    display: none;
+}
 #player > h2,
 #spotAi > h2 {
   text-align: center;
@@ -131,4 +134,38 @@ div.hit {
         background-color: #ffffff;
         color: #00273ddf;
     }
+}
+/* for drag and drop */
+#shipyard_container {
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#shipyard_container > p {
+    max-width: 30ch;
+    text-align: center;
+}
+#shipyard {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+#shipyard > .ship {
+    display: flex;
+    gap: 5px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#shipyard > .ship > * {
+    height: 15px;
+    width: 30px;
+    background-color: #737373;
 }
