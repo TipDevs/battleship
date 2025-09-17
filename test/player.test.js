@@ -33,7 +33,7 @@ describe("Player", () => {
     player.attack(Ai, [0, 0]);
     const aiBoard = aiGameBoard.getBoard();
     expect(aiBoard[0][0]).not.toBeNull(); // cell should still reference a ship
-    expect(aiBoard[0][0].getHitCount()).toBe(1); // use board reference
+    expect(aiGameBoard.retrieveHitAttacks().length).toBe(1); // use board reference
   });
 
   test("Player can attack opponent’s board and register a miss", () => {
