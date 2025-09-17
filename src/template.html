@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🚢Battleship</title>
   </head>
-  <body style="visibility: hidden;">
+  <body style="visibility: hidden">
     <main>
       <section id="title-indicator">
         <h1>🚢Battleship Game</h1>
@@ -32,6 +32,42 @@
         <div id="spotAi">
           <h2>spotAi</h2>
           <div class="game-pad"></div>
+        </div>
+        <div id="shipyard_container">
+          <p>Welcome to 🚢Battleship game.</p>
+          <p>
+            Drag and drop your ships on the battle field to start game
+            automatically
+          </p>
+          <div id="shipyard">
+            <div class="ship aircraft" draggable="true" data-length="5">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="ship battle-ship" draggable="true" data-length="4">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="ship cruiser" draggable="true" data-length="3">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="ship cruiser" draggable="true" data-length="3">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="ship destroyer" draggable="true" data-length="2">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="game-start">
