@@ -1,10 +1,11 @@
 export const DOM = (() => {
+  const startBtn = document.querySelector("#start-btn");
+  const shipYard = document.querySelector("#shipyard");
   const playerContainer = document.querySelector("#player > .game-pad");
   const spotAiContainer = document.querySelector("#spotAi > .game-pad");
   function renderBoard(board, container, isAi = false) {
     container.innerHTML = "";
     const grid = board.getBoard();
-    console.log(grid);
     grid.forEach((row, r) => {
       row.forEach((cell, c) => {
         const div = document.createElement("div");
@@ -30,5 +31,12 @@ export const DOM = (() => {
     title_indicator.style.display = "flex";
     game_console.style.display = "flex";
   };
-  return { renderBoard, startGame, playerContainer, spotAiContainer };
+  return {
+    renderBoard,
+    startGame,
+    playerContainer,
+    spotAiContainer,
+    startBtn,
+    shipYard,
+  };
 })();
