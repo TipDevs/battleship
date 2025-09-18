@@ -7,21 +7,16 @@ function handleCellClicks(e, game) {
   let result = game.playTurn([row, col]);
   if (game.isGameOver()) {
     setTimeout(() => {
+      setTimeout(() => {
+        window.location.reload();
+      });
       alert(result);
     }, 500);
     return;
   }
 }
 
-function dragAndDrop(
-  player,
-  spotAi,
-  playerGameBoard,
-  spotAiGameBoard,
-  Ship,
-  DOM,
-  game
-) {
+function dragAndDrop(playerGameBoard, spotAiGameBoard, Ship, DOM, game) {
   let draggedShip = null;
   DOM.shipYard.addEventListener("dragstart", (e) => {
     if (e.target.classList.contains("ship")) {
@@ -46,11 +41,6 @@ function dragAndDrop(
       if (DOM.shipYard.children.length === 0) {
         DOM.shipYard.parentElement.style.display = "none";
         DOM.spotAiContainer.parentElement.style.display = "flex";
-        spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(5));
-        spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(4));
-        spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(3));
-        spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(3));
-        spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(2));
         console.log(spotAiGameBoard.getBoard());
         DOM.renderBoard(spotAiGameBoard, DOM.spotAiContainer, true);
         DOM.spotAiContainer.addEventListener("click", (e) => {
@@ -75,16 +65,13 @@ export function initGame(Player, Ship, Gameboard, DOM, Game) {
     DOM.startGame(player.getName(), spotAi.getName());
     const spotAiGameBoard = spotAi.getGameBoard();
     const playerGameBoard = player.getGameBoard();
+    spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(5));
+    spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(4));
+    spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(3));
+    spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(3));
+    spotAiGameBoard.placeRandomShip(spotAiGameBoard, new Ship(2));
     const game = Game(player, spotAi);
     DOM.renderBoard(playerGameBoard, DOM.playerContainer);
-    dragAndDrop(
-      player,
-      spotAi,
-      playerGameBoard,
-      spotAiGameBoard,
-      Ship,
-      DOM,
-      game
-    );
+    dragAndDrop(playerGameBoard, spotAiGameBoard, Ship, DOM, game);
   });
 }
